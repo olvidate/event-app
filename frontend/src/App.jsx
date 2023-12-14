@@ -1,9 +1,14 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { EventsPage } from './pages/EventsPage';
+
 function App() {
   return (
-    <div>
-      <h1>Hola Mundo</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={< EventsPage />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
