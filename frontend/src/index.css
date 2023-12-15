@@ -1,4 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: #202020;
+    background: #f6ebf4;
     color: white;
 }
