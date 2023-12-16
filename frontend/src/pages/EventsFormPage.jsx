@@ -34,7 +34,7 @@ export function EventsFormPage() {
                 const {data: {title, description, date, location}} = await getEvent(params.id)
                 setValue('title', title)
                 setValue('description', description)
-                setValue('date')
+                setValue('date', moment(date).format('DD/MM/YYYY HH:mm'))
                 setValue('location', location)
             }
         }
