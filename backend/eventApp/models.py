@@ -6,8 +6,6 @@ class Event(models.Model):
     # Título del evento (Text, puede permitir valores nulos)
     # (del caso contrario pediria un valor por defecto)
     description = models.TextField(blank=True, null=True)
-    # Fecha del evento (DateTime)
-    date = models.DateTimeField()
     # Ubicación del evento (Varchar, máximo 200 caracteres)
     location = models.CharField(max_length=200)
 

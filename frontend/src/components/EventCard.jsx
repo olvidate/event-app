@@ -6,13 +6,11 @@ import moment from 'moment';
 
 export function EventCard({ event }) {
     const navigate = useNavigate();
-    const formattedDate = moment(event.date).format('DD/MM/YYYY HH:mm');
     return (
         <section>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
             <div className='info-separator'>
-                <p>Fecha: {formattedDate}</p>
                 <p>Ubicación: {event.location}</p>
             </div>
             <div className="btn-separator">
