@@ -11,6 +11,7 @@ section {
     display: flex;
     gap: .5rem;
     flex-direction: column;
+    color: white;
 }
 
 .info-separator {
