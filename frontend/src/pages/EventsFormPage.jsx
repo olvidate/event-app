@@ -12,10 +12,17 @@ export function EventsFormPage() {
     const navigate = useNavigate();
     const params = useParams();
 
+    function transfromDateToISO(originalDate) {
+        const [day, month, year, time] = originalDate.split(/[\/\s:]/);
+        const isoDate = `${year}-${month}-${day}T${time}:00`;
+        return isoDate;
+    }
+
     const onSubmit = handleSubmit(async (data) => {
         if(params.id) {
             await updateEvent(params.id, data);
         } else {
+            data.date = transfromDateToISO(data.date);
             await createEvent(data);
         }
         navigate('/');
@@ -27,7 +34,7 @@ export function EventsFormPage() {
                 const {data: {title, description, date, location}} = await getEvent(params.id)
                 setValue('title', title)
                 setValue('description', description)
-                setValue('date', moment(date).format('DD/MM/YYYY HH:mm'))
+                setValue('date')
                 setValue('location', location)
             }
         }
